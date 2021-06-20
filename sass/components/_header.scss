@@ -1,0 +1,68 @@
+.hamburger-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $accentColor;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.hamburger-menu__title {
+  font-family: $fontFamilyGilroy;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.24;
+  color: $mainHeaderTextColor;
+}
+
+.hamburger-menu__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.hamburger-menu__icon {
+  position: relative;
+  display: block;
+  background: $mainHeaderTextColor;
+  width: 24px;
+  height: 2px;
+  border: 1px solid $mainHeaderTextColor;
+}
+
+.hamburger-menu__icon::after,
+.hamburger-menu__icon::before {
+  position: absolute;
+  left: -1px;
+  top: -7px;
+  display: block;
+  content: "";
+  background-color: $mainHeaderTextColor;
+  width: 24px;
+  border: 1px solid $mainHeaderTextColor;
+}
+
+.hamburger-menu__icon::after {
+  top: 5px;
+}
+
+.hamburger-menu__checkbox:checked ~ .hamburger-menu__icon::after {
+  top: 0;
+  transform: rotateZ(90deg);
+}
+
+.hamburger-menu__checkbox:checked ~ .hamburger-menu__icon::before {
+  top: 0;
+  transform: rotateZ(-90deg);
+}
+
+.hamburger-menu__checkbox:checked ~ .hamburger-menu__icon {
+  top: 0;
+  transform: rotateZ(45deg);
+}
